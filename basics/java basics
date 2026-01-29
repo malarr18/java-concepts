@@ -1,1 +1,74 @@
+✅ Instance Variable in Java
 
+An instance variable is a variable that is:
+
+👉 Declared inside a class
+
+👉 But outside any method
+
+👉 Each object (instance) of the class gets its own copy
+
+📌 Simple Example:
+class Student {
+    int age;   // instance variable
+
+    void show() {
+        System.out.println(age);
+    }
+}
+
+
+Explanation:
+
+age is an instance variable
+
+Every Student object will have its own age
+
+📌 Usage Example:
+Student s1 = new Student();
+Student s2 = new Student();
+
+s1.age = 20;
+s2.age = 22;
+
+System.out.println(s1.age); // 20
+System.out.println(s2.age); // 22
+
+👉 Each object stores a different value.
+
+---
+
+basic program:
+
+import java.util.Scanner;
+
+public class Input {
+	public static void main(String[] a) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("enter name");
+		String name=scanner.nextLine();
+		System.out.println("enter age");
+		Integer age=scanner.nextInt();
+		System.out.println("Age:" + age);
+		scanner.close();
+	}
+}
+
+---
+
+left shift
+a << n = a * 2ⁿ
+right shift
+a >> n = a / 2ⁿ
+
+---
+
+📦 What is an Array?
+
+👉 An array is a collection of same type of values
+👉 Stored in continuous memory locations
+👉 Accessed using index (position)
+
+<type>[] <object-name> = new type[size];
+
+---
