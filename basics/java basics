@@ -72,3 +72,30 @@ a >> n = a / 2ⁿ
 <type>[] <object-name> = new type[size];
 
 ---
+
+Write a Java program to find the sum of even and odd numbers in a given range.
+import java.util.Scanner;
+
+class Range{
+    public static void main(String[] a){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Starting range: ");
+        int start=sc.nextInt();
+        System.out.println("Enter ending range: ");
+        int end=sc.nextInt();
+        int oddsum=0;
+        int evensum=0;
+        for(int i=start;i<=end;i++){
+            if(i%2==0){
+                evensum=evensum+i;
+            }
+            else if(i%2!=0){
+                oddsum=oddsum+i;
+            }
+        }
+        System.out.println("Sum of even number: " + evensum);
+        System.out.println("Sum of odd number: " + oddsum);
+    }
+}
+
+---
