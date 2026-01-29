@@ -1,0 +1,51 @@
+1. Write a code to reverse a number
+
+import java.util.Scanner;
+
+class Reverse{
+    public static void main(String[] a){
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int digit=0;
+        int temp;
+        while(num>0){
+            temp=num%10;
+            digit=(digit*10)+temp;
+            num=num/10;
+        }
+        System.out.println(digit);
+        sc.close();
+    }
+}
+
+---
+
+2. Write the code to find the Fibonacci series upto the nth term.
+
+import java.util.Scanner;
+
+class Fibonacci{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=0;
+        int b=1;
+        if(n>=1){
+            System.out.print(a);
+        }
+        if(n>=2){
+            System.out.print(" " + b);
+        }
+        for(int i=2;i<n;i++){
+            int next=a+b;
+            a=b;
+            b=next;
+            System.out.print(" " + next);
+        }
+        sc.close();
+    }
+}
+
+---
+
+  
