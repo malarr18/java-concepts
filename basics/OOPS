@@ -520,5 +520,77 @@ public class Test {
       dog.bath();   // from Pet
    }
 }
+---
+Why final class cannot be inherited in Java?
+
+👉 Because final means “cannot be changed or extended”
+
+Java is saying:
+⚠ This class is complete
+⚠ No one is allowed to create a child class from it
+---
+❓ Why constructors are not inherited?
+👉 Because constructor belongs only to its own class
+
+Its main job is:
+->Initialize (set values) of that class object
+->Not to pass down to child class.
+
+---
+
+🔁 Method Overloading (Compile-time Polymorphism)/(Static Polymorphism)
+
+✔ Same method name
+✔ Different number or type of parameters
+✔ Happens in same class
+
+Example:
+class Calculator {
+
+   int add(int a, int b) {
+      return a + b;
+   }
+
+   int add(int a, int b, int c) {
+      return a + b + c;
+   }
+
+   double add(double a, double b) {
+      return a + b;
+   }
+}
+
+---
+
+🔄 Method Overriding (Runtime Polymorphism)/(Dynamic Polymorphism)
+
+When child class changes the implementation of a parent class method.
+(Simple: child modifies parent’s behavior)
+
+✔ Same method name
+✔ Same parameters
+✔ In inheritance [parent-child class]
+
+Example:
+Parent class:
+class Animal {
+   void sound() {
+      System.out.println("Animal makes sound");
+   }
+}
+
+Child class:
+class Dog extends Animal {
+   void sound() {
+      System.out.println("Dog barks");
+   }
+}
+
+▶ Main:
+Animal a = new Dog();
+a.sound();
+
+-> Output:
+Dog barks //child modifies parent’s behavior
 
 ---
