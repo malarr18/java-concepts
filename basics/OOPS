@@ -304,3 +304,221 @@ Output:
 Pizza
 ---
 
+✅ What is Inheritance in Java?
+
+👉 Inheritance means one class gets properties (variables) and behavior (methods) from another class.
+
+Basic syntax:
+class Child extends Parent {
+}
+
+📌 Parent & Child names
+   Term	                           Meaning
+Parent class	             Super class / Base class
+Child class	                 Sub class / Derived class
+
+⭐ Why we use inheritance?
+✔ Code reuse
+✔ Less duplication
+✔ Easy maintenance
+✔ Real-world relationship (IS-A)
+
+Example:
+Lion IS A Animal ✔
+Car IS A Vehicle ✔
+---
+
+1️⃣ Single Inheritance
+
+1️⃣ Single Inheritance between TWO CLASSES
+👉 One class extends another class
+
+Example :
+class Animal { }
+
+class Lion extends Animal { }
+
+2️⃣ Single Inheritance between TWO INTERFACES
+👉 One interface extends another interface
+
+Example:
+interface Forest {
+   void place();
+}
+
+interface IAnimal extends Forest {
+   void sleep();
+   void eat();
+}
+
+3️⃣ Single Inheritance between CLASS and INTERFACE
+
+👉 Class implements ONE interface
+
+Example:
+interface Forest {
+   void place();
+}
+
+class Zoo implements Forest {
+   public void place() {
+      System.out.println("Animal is in zoo");
+   }
+}
+---
+
+2️⃣ Hierarchical Inheritance:
+
+When ONE parent class or interface is inherited by TWO or MORE child classes
+👉 One parent → many children
+
+class Animal { }
+class Lion extends Animal { }
+class Elephant extends Animal { }
+
+Both Lion & Elephant share Animal features.
+
+child class 1:
+class Lion extends Animal {
+
+   public void sound() {
+      System.out.println("Lion is roaring");
+   }
+
+   public void eat() {
+      System.out.println("Lion is eating non-veg");
+   }
+}
+
+Child class 2:
+class Elephant extends Animal {
+
+   public void sound() {
+      System.out.println("Elephant is trumpet");
+   }
+
+   public void eat() {
+      System.out.println("Elephant is eating veg");
+   }
+}
+
+▶ Main method:
+public class Test {
+   public static void main(String[] args) {
+
+      Lion lion = new Lion();
+      lion.sleep();   // from Animal
+      lion.sound();  
+      lion.eat();
+
+      Elephant ele = new Elephant();
+      ele.sleep();   // from Animal
+      ele.sound();
+      ele.eat();
+   }
+}
+---
+
+3️⃣ Multilevel Inheritance
+
+👉 Parent → Child → Grandchild
+
+Example:
+Animal → Lion → Cub
+
+class Animal { }
+
+class Lion extends Animal { }
+
+class Cub extends Lion { }
+
+
+Cub gets:
+✔ Animal features
+✔ Lion features
+
+example:
+1️⃣ Parent class
+class Animal {
+
+   void breathe() {
+      System.out.println("Animal is breathing");
+   }
+}
+
+2️⃣ Child class
+class Lion extends Animal {
+
+   void roar() {
+      System.out.println("Lion is roaring");
+   }
+}
+
+3️⃣ Grandchild class
+class Cub extends Lion {
+
+   void play() {
+      System.out.println("Cub is playing");
+   }
+}
+
+▶ Main class
+public class Test {
+   public static void main(String[] args) {
+
+      Cub cub = new Cub();
+
+      cub.breathe();  // from Animal
+      cub.roar();     // from Lion
+      cub.play();     // own method
+   }
+}
+---
+
+4️⃣ Multiple Inheritance (IMPORTANT in Java)
+👉When a single child class inherits from MORE THAN ONE parent
+
+⚠ Java DOES NOT allow multiple inheritance using classes
+class C extends A, B  // ❌
+
+👉 But Java supports it using interfaces
+
+📊 Structure
+Interface Animal     Interface Pet
+        \               /
+             Dog
+
+1️⃣ Parent interface 1
+interface Animal {
+   void eat();
+}
+
+2️⃣ Parent interface 2
+interface Pet {
+   void bath();
+}
+
+3️⃣ Child class
+class Dog implements Animal, Pet {
+
+   public void eat() {
+      System.out.println("Dog is eating");
+   }
+
+   public void bath() {
+      System.out.println("Dog is bathing");
+   }
+}
+
+▶ Main class
+public class Test {
+   public static void main(String[] args) {
+
+      Dog dog = new Dog();
+
+      dog.eat();    // from Animal
+      dog.bath();   // from Pet
+   }
+}
+
+---
