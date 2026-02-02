@@ -22,10 +22,6 @@
 
 • Interface methods are public by default, so the interface itself cannot be private.
 
-✔ Interface cannot have object
-✔ Interface methods are public by default
-✔ A class uses implements keyword
-✔ Supports multiple inheritance
 
 ⚡ Real-time Example (Company based)
 
@@ -49,5 +45,98 @@ class PhonePe implements Payment {
 
 Interface is used for security by hiding implementation details and exposing only necessary methods.
 It provides abstraction, controlled access, and loose coupling, which makes the system safer and flexible.
+
+---
+
+🔹 Types of Methods in Java
+👉 Mainly two types:
+1️⃣ Predefined Method
+2️⃣ User-defined Method
+
+And inside user-defined methods, we have:
+
+👉 Static Method
+👉 Instance Method
+
+---
+
+✅ 1. Predefined Methods (Built-in)
+
+These are already provided by Java.
+
+📌 Examples:
+System.out.println();
+Math.sqrt(16);
+
+
+👉 Created by Java developers
+👉 We just use them
+
+---
+
+⚡ Static Method
+
+👉 Belongs to class
+👉 No object needed
+👉 Called using class name
+
+✔ Example:
+class Demo {
+    static void display() {
+        System.out.println("Static Method");
+    }
+
+    public static void main(String[] args) {
+        Demo.display();   // no object
+    }
+}
+
+---
+
+👤 Instance Method (Non-static)
+
+👉 Belongs to object
+👉 Object is required
+👉 Called using object
+
+✔ Example:
+class Demo {
+    void show() {
+        System.out.println("Instance Method");
+    }
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.show();   // using object
+    }
+}
+
+---
+
+🔐 How is Data Hiding done in Java?
+
+👉 By using private access modifier
+
+and
+
+👉 Accessing using public methods (getter & setter)
+
+With Data Hiding (Safe ✅)
+class Account {
+    private int balance = 10000; // USE private modifier
+
+    public void setBalance(int amount) {
+        if(amount > 0) {
+            balance = amount;
+        }
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+}
+
+Data Hiding is the process of protecting class data by declaring variables as private 
+and providing controlled access through public methods(GET AND SET METHODS).
 
 ---
