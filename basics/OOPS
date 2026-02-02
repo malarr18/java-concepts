@@ -1,0 +1,53 @@
+🔷 What is an Interface in Java?
+
+✅ Interface in Java – Key Points (Corrected & Simple)
+
+• Interface is a reference type in Java.
+
+• It does not have method implementation (only abstract methods).
+
+• All methods in an interface are abstract by default.
+
+• We cannot create an object of an interface.
+
+• Interface is used to achieve 100% abstraction.
+
+• Interface cannot have a constructor (because no object creation).
+
+• It supports multiple inheritance.
+
+• We use the implements keyword to implement an interface in a class.
+
+• To achieve abstraction in Java, we commonly use interfaces.
+
+• Interface methods are public by default, so the interface itself cannot be private.
+
+✔ Interface cannot have object
+✔ Interface methods are public by default
+✔ A class uses implements keyword
+✔ Supports multiple inheritance
+
+⚡ Real-time Example (Company based)
+
+Payment System
+
+interface Payment {
+    void pay();
+}
+
+class GPay implements Payment {
+    public void pay() {
+        System.out.println("Paid using GPay");
+    }
+}
+
+class PhonePe implements Payment {
+    public void pay() {
+        System.out.println("Paid using PhonePe");
+    }
+}
+
+Interface is used for security by hiding implementation details and exposing only necessary methods.
+It provides abstraction, controlled access, and loose coupling, which makes the system safer and flexible.
+
+---
