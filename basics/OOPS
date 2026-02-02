@@ -140,3 +140,54 @@ Data Hiding is the process of protecting class data by declaring variables as pr
 and providing controlled access through public methods(GET AND SET METHODS).
 
 ---
+
+🔒 What is Encapsulation in Java?
+
+Encapsulation = Wrapping data(Instance variable) and behaviour(Instance method) together as a single unit.
+and restricting access to variable directly.
+
+Wrapping data (variables) and methods together in one class and protecting the data from direct access.
+
+👉 We do this by:
+Making variables private
+Accessing them using public getter and setter methods
+
+✅ Java Real-Time Example
+class BankAccount {
+
+    private int balance;   // hidden data  (instance variable should be private to achieve encapsulation)
+
+    // deposit method
+    public void deposit(int amount) {
+        if(amount > 0) {
+            balance = balance + amount;
+        }
+    }
+
+    // withdraw method
+    public void withdraw(int amount) {
+        if(amount <= balance) {
+            balance = balance - amount;
+        }
+    }
+
+    // check balance
+    public int getBalance() {
+        return balance;
+    }
+}
+
+▶ Using it:
+public class Main {
+    public static void main(String[] args) {
+
+        BankAccount acc = new BankAccount();
+
+        acc.deposit(1000);
+        acc.withdraw(300);
+
+        System.out.println(acc.getBalance()); // 700
+    }
+}
+
+---
