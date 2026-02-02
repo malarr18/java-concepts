@@ -594,3 +594,30 @@ a.sound();
 Dog barks //child modifies parent’s behavior
 
 ---
+
+🌈 Polymorphism
+
+👉 Polymorphism is used to implement method overloading and method overriding,
+where the same method behaves differently based on parameters or object type.
+
+Polymorphism means one method or object behaving in different ways based on situation.
+
+Polymorphism allows a method or object to perform different actions based on context or object type.
+
+-> One method behaves in many forms.
+
+📂 Types of Polymorphism:
+
+1️⃣ Compile-time Polymorphism (Static)
+👉 Achieved using Method Overloading
+
+2️⃣ Runtime Polymorphism (Dynamic)
+👉 Achieved using Method Overriding
+
+-> static methods cannot be override..if happen that is called "method hiding".
+-> final methods cannot be override.
+-> Constructors cannot be overridden because they are used to initialize objects 
+and their names must match the class name.
+
+---
+
