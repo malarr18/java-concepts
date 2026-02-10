@@ -627,6 +627,26 @@ Polymorphism allows a method or object to perform different actions based on con
 -> final methods cannot be override.
 -> Constructors cannot be overridden because they are used to initialize objects 
 and their names must match the class name.
+---
+-> static methods cannot be override..if happen that is called "method hiding"
+class Parent {
+    static void show() {
+        System.out.println("Parent show");
+    }
+}
+class Child extends Parent {
+    static void show() {
+        System.out.println("Child show");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.show();
+    }
+}
+🖨 Output
+Parent show
 
 ---
 
