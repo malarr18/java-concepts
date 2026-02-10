@@ -724,6 +724,97 @@ Interface → Full abstraction (100%)
 Abstract class → can have abstract + concrete methods
 Interface → only abstract methods (by default)
 
+1️⃣ Abstraction using Abstract Class
+✅ Code
+abstract class Animal {
+
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+
+    abstract void eat();     // abstract method
+    abstract void move();    // abstract method
+
+    void sleep() {           // concrete method
+        System.out.println("Animal is sleeping");
+    }
+}
+
+class Dog extends Animal {
+
+    Dog() {
+        System.out.println("Dog constructor");
+    }
+
+    void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    void move() {
+        System.out.println("Dog is moving");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+
+        Animal a = new Dog();   // parent reference, child object
+        a.eat();
+        a.move();
+        a.sleep();
+    }
+}
+
+🖨 OUTPUT
+Animal constructor
+Dog constructor
+Dog is eating
+Dog is moving
+Animal is sleeping
+
+-> Abstract class cannot be instantiated
+Constructor runs when child object is created
+Abstract methods are implemented by child
+Concrete method is inherited
+
+2️⃣ Abstraction using Interface
+✅ Code
+interface Animal {
+    void eat();
+    void sleep();
+}
+
+class Dog implements Animal {
+
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    public void sleep() {
+        System.out.println("Dog is sleeping");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+
+        Animal a = new Dog();
+        a.eat();
+        a.sleep();
+    }
+}
+
+🖨 OUTPUT
+Dog is eating
+Dog is sleeping
+
+Feature	                             Abstract Class                    Interface
+Methods	                           Abstract + Concrete	             Only abstract
+Constructor                      	✅ Yes	                           ❌ No
+Variables	                         Any type	                    public static final
+Multiple inheritance	            ❌ No	                           ✅ Yes
+Abstraction	                          Partial	                            Full
+
 ---
 
 🧱 Types of Access Modifiers
