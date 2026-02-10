@@ -520,7 +520,16 @@ public class Test {
       dog.bath();   // from Pet
    }
 }
+
 ---
+
+    Case	                   Keyword
+Class → Class	               extends
+Interface → Interface	       extends
+Class → Interface	           implements
+
+---
+
 Why final class cannot be inherited in Java?
 
 👉 Because final means “cannot be changed or extended”
