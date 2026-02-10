@@ -650,3 +650,62 @@ Parent show
 
 ---
 
+🧱 Types of Access Modifiers
+
+1️⃣ public
+
+Accessible from anywhere
+Least restrictive
+
+public class Test {
+    public int a = 40;
+}
+
+2️⃣ private
+
+Accessible only inside the same class
+Most restrictive
+
+class Test {
+    private int x = 10;
+}
+
+3️⃣ default (package-private)
+
+No keyword used
+Accessible within same package only
+
+class Test {
+    int y = 20;   // default access
+}
+❌ Not accessible in another package
+
+4️⃣protected
+
+Accessible:
+Same class
+Same package
+Subclass in another package (via inheritance)
+
+class Parent {
+    protected int z = 30;
+}
+
+🔹 Class-level access
+Only two are allowed:
+public
+default
+
+public class A { }   // ✅
+class B { }          // ✅
+private class C { }  // ❌
+protected class D { } // ❌
+
+🔹 Method & Variable level
+All 4 modifiers are allowed.
+
+-> Private → Class only, 
+   Default → Package, 
+   Protected → Package + Child(subclass in another package), 
+   Public → Everywhere
+---
