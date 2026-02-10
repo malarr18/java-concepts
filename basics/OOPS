@@ -721,6 +721,9 @@ Abstraction means hiding implementation details and showing only essential featu
 Abstract Class → Partial abstraction (0–100%)
 Interface → Full abstraction (100%)
 
+Abstract class → can have abstract + concrete methods
+Interface → only abstract methods (by default)
+
 ---
 
 🧱 Types of Access Modifiers
