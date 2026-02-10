@@ -650,6 +650,79 @@ Parent show
 
 ---
 
+1️⃣ CONSTRUCTOR 
+🔹 What is a constructor?
+Special method
+Same name as class
+No return type
+Runs automatically when object is created
+
+abstract class Animal {
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+class Dog extends Animal {
+    Dog() {
+        System.out.println("Dog constructor");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}
+🖨 OUTPUT
+Animal constructor
+Dog constructor
+
+🧠 Why this order?
+Parent constructor runs first
+Then child constructor
+
+---
+
+2️⃣ ABSTRACT METHOD
+🔹 What is an abstract method?
+
+Method without body
+Only declaration
+Ends with ;
+Forces child class to implement it
+
+-> abstract void eat();
+
+---
+
+3️⃣ CONCRETE METHOD (NORMAL METHOD)
+🔹 What is a concrete method?
+
+Method with body
+Can be used directly
+Can be overridden (unless final)
+
+✅ Code
+abstract class Animal {
+    void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+}
+
+---
+
+--> ABSTRACTION:
+
+Abstraction means hiding implementation details and showing only essential features.
+✔️ Used to reduce complexity
+✔️ Improves security
+✔️ Focuses only on what, not how
+
+🔷 Java supports abstraction in TWO ways
+Abstract Class → Partial abstraction (0–100%)
+Interface → Full abstraction (100%)
+
+---
+
 🧱 Types of Access Modifiers
 
 1️⃣ public
@@ -708,4 +781,5 @@ All 4 modifiers are allowed.
    Default → Package, 
    Protected → Package + Child(subclass in another package), 
    Public → Everywhere
+
 ---
